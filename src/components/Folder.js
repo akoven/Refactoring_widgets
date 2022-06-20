@@ -7,19 +7,19 @@ const Headers = ({ titles, currentTab, selectTab }) => {
   }
 
   const tabs = titles.map((title, idx) => {
-    const headerClass = (idx === currentTab) ? 'active' : '';
+      const headerClass = (idx === currentTab) ? 'active' : '';
 
-    return (
-      <li
+      return (
+        <li
         key={idx}
         id={idx}
         onClick={handleClick}
         className={headerClass}
-      >
-        {title}
-      </li>
-    );
-  });
+        >
+          {title}
+        </li>
+      );
+    });
 
   return (
     <ul className='tab-header'>
@@ -29,20 +29,23 @@ const Headers = ({ titles, currentTab, selectTab }) => {
 }
 
 // class Folder extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       currentTab: 0
+  //   constructor(props) {
+    //     super(props);
+    //     this.state = {
+      //       currentTab: 0
 //     };
 //   }
 
 function Folder({folders}){
+  const [currentTab, setCurrentTab] = useState(0);
+  const [selectTab, setSelectTab] = useState(0)
 
-  const [currentTab, setCurrentTab] = useState('one');
-  selectTab = (num) => setCurrentTab( num );
+   //selectTab = (num) => setCurrentTab( num );
 
-  const folder = folders[currentTab];
-  console.log(folder);
+
+
+  const folder = folders[currentTab]
+  console.log('folder: ', folder)
 
   const titles = folders.map(folder => folder.title);
   console.log(titles);
@@ -54,7 +57,7 @@ function Folder({folders}){
            <Headers
             titles={titles}
             currentTab={currentTab}
-            selectTab={selectTab}
+            selectTab={setCurrentTab}
           />
           <div className='tab-content'>
             {folder.content}
