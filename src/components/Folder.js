@@ -38,7 +38,7 @@ const Headers = ({ titles, currentTab, selectTab }) => {
 
 function Folder({folders}){
   const [currentTab, setCurrentTab] = useState(0);
-  const [selectTab, setSelectTab] = useState(0)
+  // const [selectTab, setSelectTab] = useState(0)
 
    //selectTab = (num) => setCurrentTab( num );
 
